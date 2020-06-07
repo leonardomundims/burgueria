@@ -1,0 +1,13 @@
+D:\senac-tec\Senac\uc05\Pedidos\pedidosConsole\pedidosConsole\obj\Debug\netcoreapp3.1\pedidosConsole.csprojAssemblyReference.cache
+D:\senac-tec\Senac\uc05\Pedidos\pedidosConsole\pedidosConsole\obj\Debug\netcoreapp3.1\pedidosConsole.AssemblyInfoInputs.cache
+D:\senac-tec\Senac\uc05\Pedidos\pedidosConsole\pedidosConsole\obj\Debug\netcoreapp3.1\pedidosConsole.AssemblyInfo.cs
+D:\senac-tec\Senac\uc05\Pedidos\pedidosConsole\pedidosConsole\obj\Debug\netcoreapp3.1\pedidosConsole.csproj.CoreCompileInputs.cache
+D:\senac-tec\Senac\uc05\Pedidos\pedidosConsole\pedidosConsole\bin\Debug\netcoreapp3.1\pedidosConsole.exe
+D:\senac-tec\Senac\uc05\Pedidos\pedidosConsole\pedidosConsole\bin\Debug\netcoreapp3.1\pedidosConsole.deps.json
+D:\senac-tec\Senac\uc05\Pedidos\pedidosConsole\pedidosConsole\bin\Debug\netcoreapp3.1\pedidosConsole.runtimeconfig.json
+D:\senac-tec\Senac\uc05\Pedidos\pedidosConsole\pedidosConsole\bin\Debug\netcoreapp3.1\pedidosConsole.runtimeconfig.dev.json
+D:\senac-tec\Senac\uc05\Pedidos\pedidosConsole\pedidosConsole\bin\Debug\netcoreapp3.1\pedidosConsole.dll
+D:\senac-tec\Senac\uc05\Pedidos\pedidosConsole\pedidosConsole\bin\Debug\netcoreapp3.1\pedidosConsole.pdb
+D:\senac-tec\Senac\uc05\Pedidos\pedidosConsole\pedidosConsole\obj\Debug\netcoreapp3.1\pedidosConsole.dll
+D:\senac-tec\Senac\uc05\Pedidos\pedidosConsole\pedidosConsole\obj\Debug\netcoreapp3.1\pedidosConsole.pdb
+D:\senac-tec\Senac\uc05\Pedidos\pedidosConsole\pedidosConsole\obj\Debug\netcoreapp3.1\pedidosConsole.genruntimeconfig.cache
