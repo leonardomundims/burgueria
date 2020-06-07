@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CD2ru5HOv/FrJM1u4GuwAsgoeDkKhsZ27mrRRPq6dpuHki5lAEXHB4V5EKHOQ2McKheO2+XLaZ5bC/Gpf3NOYw==",
+  "dgSpecHash": "PKpJ+1Ki5wLHe64ObniSwwzvo+/Y98o+e/txFsqGvrZeF2vthxr2nDgUPc5QqMBn3Opyw1SUf+BDcNdA+98bNQ==",
   "success": true,
-  "projectFilePath": "D:\\senac-tec\\Senac\\uc05\\Pedidos\\pedidosConsole\\pedidosConsole\\pedidosConsole.csproj",
+  "projectFilePath": "D:\\senac-tec\\Senac\\uc05\\Pedidos\\pedidosConsole\\pedidosConsole.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\leomu\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
   ],

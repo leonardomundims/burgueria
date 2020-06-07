@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\senac-tec\\Senac\\uc05\\Pedidos\\pedidosConsole\\pedidosConsole\\pedidosConsole.csproj",
+      "projectUniqueName": "D:\\senac-tec\\Senac\\uc05\\Pedidos\\pedidosConsole\\pedidosConsole.csproj",
       "projectName": "pedidosConsole",
-      "projectPath": "D:\\senac-tec\\Senac\\uc05\\Pedidos\\pedidosConsole\\pedidosConsole\\pedidosConsole.csproj",
+      "projectPath": "D:\\senac-tec\\Senac\\uc05\\Pedidos\\pedidosConsole\\pedidosConsole.csproj",
       "packagesPath": "C:\\Users\\leomu\\.nuget\\packages\\",
-      "outputPath": "D:\\senac-tec\\Senac\\uc05\\Pedidos\\pedidosConsole\\pedidosConsole\\obj\\",
+      "outputPath": "D:\\senac-tec\\Senac\\uc05\\Pedidos\\pedidosConsole\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
