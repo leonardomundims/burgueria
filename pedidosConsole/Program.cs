@@ -1,12 +1,13 @@
 ﻿using pedidosConsole.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace pedidosConsole {
     class Program {
 
         static void Main(string[] args) {
-            var pedido = new List<ItemPedido>();
+            var pedido = new Pedido();
             string decisao;
 
 
@@ -31,18 +32,10 @@ namespace pedidosConsole {
                 item.Quantidade = quantidade;
 
                 // adicionar o item ao pedido
-                pedido.Add(item);
+                pedido.Adicionar(item);
 
                 //exibir o pedido
-                Console.WriteLine("------- PEDIDO -------");
-                Console.WriteLine("# - ITEM - VALOR UNITARIO - QTD");
-                int i = 1;
-                foreach (var elemento in pedido) {
-                    
-                    Console.WriteLine($"{i} - {elemento.Descricao} - {elemento.ValorUnitario} - {elemento.Quantidade}");
-                    Console.WriteLine("-------------------");
-                    i++;
-                }
+                pedido.Imprimir();
                 
                 Console.WriteLine("Gostaria de adicionar um item ao pedido? s/n");
                 decisao = Console.ReadLine();
@@ -50,7 +43,11 @@ namespace pedidosConsole {
 
             } while (decisao == "s");
 
-            
+            var total = pedido.Total();
+            Console.WriteLine("--------------");
+            Console.WriteLine("Total do pedido: " + total.ToString("C2", CultureInfo.CurrentCulture));
+
+
         }
     }
 }
