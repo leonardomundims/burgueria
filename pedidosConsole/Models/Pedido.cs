@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace pedidosConsole.Models {
-    class Pedido {
+    public class Pedido {
         private List<ItemPedido> Ordem = new List<ItemPedido>();
 
         public void Adicionar(ItemPedido item) {
             Ordem.Add(item);
+        }
+
+        public List<ItemPedido> Exibir(){
+            return Ordem;
         }
 
         public void Imprimir() {

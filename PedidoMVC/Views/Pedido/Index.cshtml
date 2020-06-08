@@ -1,27 +1,47 @@
 ﻿<!-- Pedido -->
+@model List<pedidosConsole.Models.ItemPedido>
+    <!---->
+@{ ViewData["Title"] = "Pedido"; }
 
-@{
-    ViewData["Title"] = "Pedido";
-}
+    <div class="text-center">
+        <h1 class="display-4">Página de Pedido</h1>
+   @if (Model != null) {
+            int i = 1;
+        <table>
+            <tr>
+                <td>#</td>
+                <td>Descrição</td>
+                <td>Quantidade</td>
+                <td>Valor unitario</td>
+            </tr>
+            @foreach (var item in Model) {
+            <tr>
+                <td>@i</td>
+                <td>@item.Descricao</td>
+                <td>@item.Quantidade</td>
+                <td>@item.ValorUnitario</td>
+            </tr>
+                i++;
+            } 
+        </table>
+        }
 
-<div class="text-center">
-    <h1 class="display-4">Página de Pedido</h1>
-    <form class="pt-2 form-pedido">
-        <div class="field">
-            <label for="description">Descrição</label>
-            <input type="text" name="description" required/>
-        </div>
+        <form class="pt-2 form-pedido" method="POST">
+            <div class="field">
+                <label for="description">Descrição</label>
+                <input type="text" name="description" required/>
+            </div>
 
-        <div class="field">
-            <label for="quantidade">Quantidade</label>
-            <input type="number" min="1" step="1" class="qtd" name="quantidade" required/>
-        </div>
+            <div class="field">
+                <label for="quantidade">Quantidade</label>
+                <input type="number" min="1" step="1" class="qtd" name="quantidade" required/>
+            </div>
 
-        <div class="field">
-            <label for="valor">Valor unitario</label>
-            <input type="text" name="valor" required/>
-        </div>
+            <div class="field">
+                <label for="valor">Valor unitario</label>
+                <input type="text" name="valor" required/>
+            </div>
 
-        <button type="submit">Adicionar</button>
-    </form>
-</div>
+            <button type="submit">Adicionar</button>
+        </form>
+    </div>

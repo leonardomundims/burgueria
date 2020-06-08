@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace pedidosConsole.Models {
-    class ItemPedido {
+    public class ItemPedido {
         public string Descricao { get; set; }
         public double ValorUnitario { get; set; }
         public int Quantidade { get; set; }

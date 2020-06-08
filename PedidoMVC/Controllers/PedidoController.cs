@@ -7,8 +7,23 @@ using pedidosConsole.Models;
 
 namespace PedidoMVC.Controllers {
     public class PedidoController : Controller {
+
+        [HttpGet]
         public IActionResult Index() {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(ItemPedido item) {
+            var itemPedido = new ItemPedido();
+            itemPedido.Descricao = item.Descricao;
+            itemPedido.ValorUnitario = item.ValorUnitario;
+            itemPedido.Quantidade = item.Quantidade;
+
+            var pedido = new Pedido();
+            pedido.Adicionar(itemPedido);
+            var ordem = pedido.Exibir();
+            return View(ordem);
         }
 
 
