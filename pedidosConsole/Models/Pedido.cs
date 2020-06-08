@@ -28,7 +28,9 @@ namespace pedidosConsole.Models {
             double total = 0;
 
             foreach(var item in Ordem) {
-                total += item.ValorUnitario * item.Quantidade;
+                double.TryParse(item.ValorUnitario, out double valor);
+                int quantidade = item.Quantidade;
+                total += valor * quantidade;
             }
 
             return total;

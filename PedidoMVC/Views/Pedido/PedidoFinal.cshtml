@@ -1,7 +1,32 @@
 ﻿@{
     ViewData["Title"] = "Pedido Finalizado";
 }
+@model List<pedidosConsole.Models.ItemPedido>
 
-<div class="text-center">
-    <h1 class="display-4">Página do pedido finalizado</h1>
-</div>
+    <div class="text-center">
+        <h1 class="display-4">Página do pedido finalizado</h1>
+        @if (Model != null) {
+            int i = 1;
+            <table>
+                <tr>
+                    <td>#</td>
+                    <td>Descrição</td>
+                    <td>Quantidade</td>
+                    <td>Valor unitario</td>
+                </tr>
+                @foreach (var item in Model) {
+                    <tr>
+                        <td>@i</td>
+                        <td>@item.Descricao</td>
+                        <td>@item.Quantidade</td>
+                        <td>@item.ValorUnitario</td>
+                    </tr>
+                    i++;
+                }
+                <tr>
+                    <td>Total:</td>
+                    <td>@ViewBag.Total</td>
+                </tr>
+            </table>
+        }
+    </div>

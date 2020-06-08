@@ -28,8 +28,8 @@
 
         <form class="pt-2 form-pedido" method="POST">
             <div class="field">
-                <label for="description">Descrição</label>
-                <input type="text" name="description" required/>
+                <label for="descricao">Descrição</label>
+                <input type="text" name="descricao" required/>
             </div>
 
             <div class="field">
@@ -39,9 +39,11 @@
 
             <div class="field">
                 <label for="valor">Valor unitario</label>
-                <input type="text" name="valor" required/>
+                <input type="text" name="valorUnitario" required/>
             </div>
 
             <button type="submit">Adicionar</button>
         </form>
+
+        <a asp-action="PedidoFinal">Finalizar pedido</a>
     </div>

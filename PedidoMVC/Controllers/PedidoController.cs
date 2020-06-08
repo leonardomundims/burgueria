@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PedidoMVC.Models;
 using pedidosConsole.Models;
 
 namespace PedidoMVC.Controllers {
@@ -10,26 +11,32 @@ namespace PedidoMVC.Controllers {
 
         [HttpGet]
         public IActionResult Index() {
+            
             return View();
         }
 
+        Pedido dados = Dados.PedidoAtual;
         [HttpPost]
         public IActionResult Index(ItemPedido item) {
+            Console.WriteLine(item);
             var itemPedido = new ItemPedido();
             itemPedido.Descricao = item.Descricao;
             itemPedido.ValorUnitario = item.ValorUnitario;
             itemPedido.Quantidade = item.Quantidade;
 
-            var pedido = new Pedido();
-            pedido.Adicionar(itemPedido);
-            var ordem = pedido.Exibir();
+           
+            dados.Adicionar(itemPedido);
+            var ordem = dados.Exibir();
+
             return View(ordem);
         }
 
 
-        [HttpPost]
-        public IActionResult PedidoFinal(Pedido pedido) {
-            return View(pedido);
+        public IActionResult PedidoFinal() {
+
+            ViewBag.Total = dados.Total().ToString("C2");
+            var ordem = dados.Exibir();
+            return View(ordem);
         }
 
         public IActionResult Pedidos() {
