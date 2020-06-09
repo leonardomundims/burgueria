@@ -10,6 +10,7 @@ namespace PedidoMVC.Controllers {
     public class PedidoController : Controller {
 
         Pedido dados = Dados.PedidoAtual;
+        
         [HttpGet]
         public IActionResult Index() {
             ViewBag.Header = "Faça seu pedido";
@@ -19,7 +20,6 @@ namespace PedidoMVC.Controllers {
         
         [HttpPost]
         public IActionResult Index(ItemPedido item) {
-            
 
             var itemPedido = new ItemPedido();
             itemPedido.Descricao = item.Descricao;
