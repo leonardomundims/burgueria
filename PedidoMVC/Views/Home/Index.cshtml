@@ -2,12 +2,12 @@
 
 @{ ViewData["Title"] = "Home Page"; }
 
-<div class="split">
-    <div id="lanchonete"></div>
+<div class="row" id="page-home">
 
-    <div class="text-center" style="border: 1px solid red;">
-        <h1 class="display-4">Bem vindo a lanchonete</h1>
-
-        <a asp-action="Index" asp-controller="Pedido">Fazer pedido</a>
+    <div class="col s6 offset-s6 content">
+        <h5>Bem vindo a</h5>
+        <h1>Burgueria</h1>
+         
+        <a asp-controller="Pedido" asp-action="Index" class="waves-effect waves-light btn-large"><span id="cart"></span> Fazer pedido</a>
     </div>
 </div>

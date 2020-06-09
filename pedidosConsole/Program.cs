@@ -27,7 +27,6 @@ namespace pedidosConsole {
 
                     //pegar o valor unitario do item[i]
                     Console.WriteLine("Digite o valor do item");
-                    //double.TryParse(Console.ReadLine(), out double valorUnitario);
                     item.ValorUnitario = Console.ReadLine();
 
                     //pegar a quantidade do item[i]

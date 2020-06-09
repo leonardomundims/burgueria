@@ -3,8 +3,8 @@
 }
 @model List<pedidosConsole.Models.ItemPedido>
 
-    <div class="text-center">
-        <h1 class="display-4">Página do pedido finalizado</h1>
+    <div class="center-align" id="page-total">
+        <h1>Seu pedido final</h1>
         @if (Model != null) {
             int i = 1;
             <table>
@@ -25,7 +25,7 @@
                 }
                 <tr>
                     <td>Total:</td>
-                    <td>@ViewBag.Total</td>
+                    <td class="red" style="color:white;">@ViewBag.Total</td>
                 </tr>
             </table>
         }

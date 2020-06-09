@@ -3,47 +3,52 @@
     <!---->
 @{ ViewData["Title"] = "Pedido"; }
 
-    <div class="text-center">
-        <h1 class="display-4">Página de Pedido</h1>
+    <div class="center-align" id="page-pedido">
+        <h1 class="display-4">@ViewBag.Header</h1>
    @if (Model != null) {
-            int i = 1;
+       int i = 1;
         <table>
-            <tr>
-                <td>#</td>
-                <td>Descrição</td>
-                <td>Quantidade</td>
-                <td>Valor unitario</td>
-            </tr>
+            <thead>
+                <tr class="row valign-wrapper">
+                    <td>#</td>
+                    <td class="col s4">Descrição</td>
+                    <td class="col s2">Quantidade</td>
+                    <td class="col s4">Valor unitario (R$)</td>
+                </tr>
+            </thead>
             @foreach (var item in Model) {
-            <tr>
-                <td>@i</td>
-                <td>@item.Descricao</td>
-                <td>@item.Quantidade</td>
-                <td>@item.ValorUnitario</td>
-            </tr>
+            <tbody>
+                <tr class="row valign-wrapper ">
+                    <td>@i</td>
+                    <td class="col s4 ">@item.Descricao</td>
+                    <td class=" col s2 ">@item.Quantidade</td>
+                    <td class="col s4 ">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-Br"), "{0:C}", item.ValorUnitario)</td>
+                </tr>
+            </tbody>
                 i++;
             } 
         </table>
         }
 
-        <form class="pt-2 form-pedido" method="POST">
-            <div class="field">
+        <h3>Adicionar item</h3>
+        <form class="row" method="POST">
+            <div class="col s4">
                 <label for="descricao">Descrição</label>
-                <input type="text" name="descricao" required/>
+                <input type="text" name="descricao" required class="form-control"/>
             </div>
 
-            <div class="field">
+            <div class="col s2">
                 <label for="quantidade">Quantidade</label>
-                <input type="number" min="1" step="1" class="qtd" name="quantidade" required/>
+                <input type="number" min="1" step="1" name="quantidade" required class="form-control" />
             </div>
 
-            <div class="field">
+            <div class="col s4">
                 <label for="valor">Valor unitario</label>
-                <input type="text" name="valorUnitario" required/>
+                <input type="text" name="valorUnitario" required class="form-control" />
             </div>
 
-            <button type="submit">Adicionar</button>
+            <button type="submit" class="btn-floating pulse red"><i class="material-icons">add</i></button>
         </form>
 
-        <a asp-action="PedidoFinal">Finalizar pedido</a>
+        <a asp-action="PedidoFinal" class="btn-large "><i class="material-icons right">monetization_on</i>Finalizar pedido</a>
     </div>
