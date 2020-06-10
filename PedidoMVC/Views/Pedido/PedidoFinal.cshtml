@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Pedido Finalizado";
 }
-@model List<pedidosConsole.Models.ItemPedido>
+@model List<PedidoMVC.Models.ItemPedido>
 
     <div class="center-align" id="page-total">
         <h1>Seu pedido final</h1>
@@ -17,9 +17,9 @@
                 @foreach (var item in Model) {
                     <tr>
                         <td>@i</td>
-                        <td>@item.Descricao</td>
+                        <td>@item.Produto</td>
                         <td>@item.Quantidade</td>
-                        <td>@item.ValorUnitario</td>
+                        <td>@item.Produto.Preco</td>
                     </tr>
                     i++;
                 }

@@ -8,57 +8,105 @@ namespace pedidosConsole {
 
         static void Main(string[] args) {
             string decidir;
-            int i = 1;
 
-            Console.WriteLine("Gostaria de fazer um pedido? s/n");
-            decidir = Console.ReadLine();
+            Console.WriteLine("Gostaria de? 1-Fazer um pedido ou 2-Adicionar um produto");
+            decidir = Console.ReadLine().;
 
-            while(decidir == "s") {
-                var pedido = new Pedido();
-                string decisao;
+            switch(decidir) {
+                case "1": {
+                    int i = 1;
 
-                Console.WriteLine("---- Faça o pedido -----");
+                    //fazer pedido
+                    do {
 
-                do {
-                    var item = new ItemPedido();
-                    //pegar a descrição do item[i]
-                    Console.WriteLine("Descreva o item");
-                    item.Descricao = Console.ReadLine();
+                        //string decisao;
+                        var pedido = new Pedido();
+                        Console.WriteLine("---- Faça o pedido -----");
 
-                    //pegar o valor unitario do item[i]
-                    Console.WriteLine("Digite o valor do item");
-                    item.ValorUnitario = (Console.ReadLine()).Replace(".", ",");
+                        //adicionar itens ao pedido
+                        do {
+                            var item = new ItemPedido();
+                            //pegar a descrição do item[i]
+                            Console.WriteLine("Escolha o item");
+                            Console.WriteLine();
+                            item.Descricao = Console.ReadLine();
 
-                    //pegar a quantidade do item[i]
-                    Console.WriteLine("Digite a quantidade do item");
-                    int.TryParse(Console.ReadLine(), out int quantidade);
-                    item.Quantidade = quantidade;
+                            //pegar o valor unitario do item[i]
+                            Console.WriteLine("Digite o valor do item");
+                            item.ValorUnitario = (Console.ReadLine()).Replace(".", ",");
 
-                    // adicionar o item ao pedido
-                    pedido.Adicionar(item);
+                            //pegar a quantidade do item[i]
+                            Console.WriteLine("Digite a quantidade do item");
+                            int.TryParse(Console.ReadLine(), out int quantidade);
+                            item.Quantidade = quantidade;
 
-                    //exibir o pedido
-                    pedido.Imprimir();
+                            // adicionar o item ao pedido
+                            pedido.Adicionar(item);
 
-                    Console.WriteLine("Gostaria de adicionar um item ao pedido? s/n");
-                    decisao = Console.ReadLine();
+                            //exibir o pedido
+                            pedido.Imprimir();
+
+                            Console.WriteLine("Gostaria de adicionar um item ao pedido? s/n");
+                            decidir = Console.ReadLine();
 
 
-                } while (decisao == "s");
+                        } while (decidir == "s");
 
-                var total = pedido.Total();
-                Console.WriteLine("--------------");
-                Console.WriteLine($"Total do pedido {i}: " + total.ToString("C2", CultureInfo.CurrentCulture));
-                i++;
+                        var total = pedido.Total();
+                        Console.WriteLine("--------------");
+                        Console.WriteLine($"Total do pedido {i}: " + total.ToString("C2", CultureInfo.CurrentCulture));
+                        i++;
 
-                Console.WriteLine("Gostaria de fazer um novo pedido? s/n ");
-                decidir = Console.ReadLine();
+                        Console.WriteLine("Gostaria de fazer um novo pedido? s/n ");
+                        decidir = Console.ReadLine();
 
+                    } while (decidir == "s");
+
+                    };
+                    break;
+
+
+                case "2": {
+                        do {
+                            var produto = new Produto();
+                            //nome do produto
+                            Console.WriteLine("Digite o nome do Produto");
+                            produto.Nome = Console.ReadLine();
+
+                            //preço produto
+                            Console.WriteLine("Digite o preço do Produto");
+                            var info = (Console.ReadLine()).Replace(".", ","); //trocar . por , para evitar erro nos calculos .NET usa CultureInfo
+                            double.TryParse(info, out double preco);
+                            produto.Preco = preco;
+
+                            //exibir o produto cadastrado
+                            Console.WriteLine(produto.Exibir());
+
+
+                            Console.WriteLine("Deseja cadastrar outro Produto? s/n");
+                            decidir = Console.ReadLine();
+                        } while (decidir == "s");
+                    };
+                    break;
+            }
+                
             }
 
 
-            Console.WriteLine("Obrigado por utilizar o programa");
- 
+            if(decidir == "1") {
+               
+
+                Console.WriteLine("Obrigado por utilizar o programa");
+            }
+
+            
+
+
+
+
+
+
+
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace pedidosConsole.Models {
+namespace PedidoMVC.Models {
     public class ItemPedido {
 
         public Produto Produto { get; set; }
@@ -20,13 +20,9 @@ namespace pedidosConsole.Models {
         }
 
         public double SubTotal() {
-            return Produto.Preco * Quantidade;
+            double.TryParse(Produto.Preco, out double preco);
+            return preco * Quantidade;
         }
 
-
-        public void Imprimir(ItemPedido item) {
-            Console.WriteLine($"Descrição: {Produto.Nome} | Valor unitário: {Produto.Preco} " +
-                $"| Quantidade: {item.Quantidade}");
-        }
     }
 }

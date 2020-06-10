@@ -1,5 +1,5 @@
 ﻿<!-- Pedido -->
-@model List<pedidosConsole.Models.ItemPedido>
+@model List<PedidoMVC.Models.ItemPedido>
     <!---->
 @{ ViewData["Title"] = "Pedido"; }
 
@@ -20,9 +20,9 @@
             <tbody>
                 <tr class="row valign-wrapper ">
                     <td>@i</td>
-                    <td class="col s4 ">@item.Descricao</td>
+                    <td class="col s4 ">@item.Produto</td>
                     <td class=" col s2 ">@item.Quantidade</td>
-                    <td class="col s4 ">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-Br"), "{0:C}", item.ValorUnitario)</td>
+                    <td class="col s4 ">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-Br"), "{0:C}", item.Produto.Preco)</td>
                 </tr>
             </tbody>
                 i++;

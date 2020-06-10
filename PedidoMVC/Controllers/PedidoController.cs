@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PedidoMVC.Models;
-using pedidosConsole.Models;
+
 
 namespace PedidoMVC.Controllers {
     public class PedidoController : Controller {
@@ -25,13 +25,7 @@ namespace PedidoMVC.Controllers {
         [HttpPost]
         public IActionResult Index(ItemPedido item) {
 
-            var itemPedido = new ItemPedido();
-            itemPedido.Descricao = item.Descricao;
-            itemPedido.ValorUnitario = (item.ValorUnitario).Replace(".", ",");
-            itemPedido.Quantidade = item.Quantidade;
-
-           
-            dados.Adicionar(itemPedido);
+            dados.Adicionar(item);
             var ordem = dados.Exibir();
 
             ViewBag.Header = "Seu pedido";

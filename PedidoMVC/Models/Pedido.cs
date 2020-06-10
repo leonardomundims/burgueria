@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace pedidosConsole.Models {
+namespace PedidoMVC.Models {
     public class Pedido {
         private List<ItemPedido> Ordem = new List<ItemPedido>();
 
@@ -18,16 +18,6 @@ namespace pedidosConsole.Models {
 
         public List<ItemPedido> Exibir(){
             return Ordem;
-        }
-
-        public void Imprimir() {
-            Console.WriteLine("----------- PEDIDO ------------");
-            Console.WriteLine("# - ITEM - QTD - VALOR UNITARIO");
-            int i = 1;
-            foreach(var item in Ordem) {
-                Console.WriteLine($"{i} - {item.Produto.Nome} - {item.Quantidade} - {item.Produto.Preco}");
-                i++;
-            }
         }
 
         public double Total() {
