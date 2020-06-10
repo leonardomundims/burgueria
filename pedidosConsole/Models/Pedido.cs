@@ -10,6 +10,12 @@ namespace pedidosConsole.Models {
             Ordem.Add(item);
         }
 
+        public void Limpar() {
+            if(Ordem.Count > 0) {
+                Ordem.Clear();
+            }
+        }
+
         public List<ItemPedido> Exibir(){
             return Ordem;
         }

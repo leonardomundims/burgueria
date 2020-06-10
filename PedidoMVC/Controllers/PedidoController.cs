@@ -13,6 +13,10 @@ namespace PedidoMVC.Controllers {
         
         [HttpGet]
         public IActionResult Index() {
+            if(dados.Exibir().Count > 0) {
+                dados.Limpar();
+            }
+
             ViewBag.Header = "Faça seu pedido";
             return View();
         }
