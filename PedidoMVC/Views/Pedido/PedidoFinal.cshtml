@@ -13,13 +13,15 @@
                     <td>Descrição</td>
                     <td>Quantidade</td>
                     <td>Valor unitario</td>
+                    <td>Sub Total</td>
                 </tr>
                 @foreach (var item in Model) {
                     <tr>
                         <td>@i</td>
-                        <td>@item.Produto</td>
+                        <td>@item.Nome</td>
                         <td>@item.Quantidade</td>
-                        <td>@item.Produto.Preco</td>
+                        <td>@item.Preco</td>
+                        <td>@item.SubTotal()</td>
                     </tr>
                     i++;
                 }

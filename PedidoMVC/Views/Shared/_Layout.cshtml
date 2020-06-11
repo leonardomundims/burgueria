@@ -7,7 +7,9 @@
     <!-- font -->
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <!-- materialize -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
     <!-- materialize icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- local -->
@@ -18,10 +20,8 @@
     <header>
         <nav>
             <div class="container">
-            <a asp-controller="Home" asp-action="Index" class="logo center"><span id="burguer"></span>Burgueria</a>
-            <a asp-controller="Pedido" asp-action="Index" class="pedido btn right" >Pedido</a>
-            <a asp-controller="Admin" asp-action="Index" class="pedido btn right" >Login</a>
-           
+                <a asp-controller="Home" asp-action="Index" class="logo center"><span id="burguer"></span>Burgueria</a>
+                <a asp-controller="Pedido" asp-action="Index" class="pedido btn right" >Pedido</a>
             </div>
         </nav>
     </header>
@@ -30,7 +30,14 @@
             @RenderBody()
         </main>
     </div>
-    <!-- matealize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+        $('select').not('.disabled').material_select();
+
+        window.onload=function(){
+            $(document).ready(function() {
+                $('select').material_select();
+        });}
+    </script>
 </body>
 </html>

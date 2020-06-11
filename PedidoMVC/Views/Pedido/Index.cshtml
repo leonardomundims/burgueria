@@ -4,51 +4,71 @@
 @{ ViewData["Title"] = "Pedido"; }
 
     <div class="center-align" id="page-pedido">
-        <h1 class="display-4">@ViewBag.Header</h1>
+        <h1 class="display-4">Escolha os itens</h1>
+    
    @if (Model != null) {
        int i = 1;
         <table>
             <thead>
                 <tr class="row valign-wrapper">
                     <td>#</td>
-                    <td class="col s4">Descrição</td>
+                    <td class="col s4">Item</td>
                     <td class="col s2">Quantidade</td>
                     <td class="col s4">Valor unitario (R$)</td>
+                    <td class="col s2">Sub Total</td>
                 </tr>
             </thead>
-            @foreach (var item in Model) {
             <tbody>
+            @foreach (var item in Model) {
+    
                 <tr class="row valign-wrapper ">
                     <td>@i</td>
-                    <td class="col s4 ">@item.Produto</td>
+                    <td class="col s4 ">@item.Nome</td>
                     <td class=" col s2 ">@item.Quantidade</td>
-                    <td class="col s4 ">@String.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-Br"), "{0:C}", item.Produto.Preco)</td>
+                    <td class=" col s4 ">@item.Preco</td>
+                    <td class=" col s2 ">@item.SubTotal()</td>
                 </tr>
-            </tbody>
                 i++;
             } 
+            </tbody>
         </table>
-        }
+        } 
+    <!-- <td class="col s4 ">String.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-Br"), "{0:C}", item.Produto.Preco)</td> -->
+        <form action="" method="POST">
+           
+           <div class="row">
+                <div class="col s5">
+                    <label for="nome">Item</label>
+                    <select name="nome" class="default-browser">
+                        <option value="" disabled>Escolha o item</option>
+                        <option value="Hamburguer">Hamburguer</option>
+                        <option value="Batata">Batata</option>
+                        <option value="Refrigerante">Refrigerante</option>
+                    </select>
+                </div>
 
-        <h3>Adicionar item</h3>
-        <form class="row" method="POST">
-            <div class="col s4">
-                <label for="descricao">Descrição</label>
-                <input type="text" name="descricao" required class="form-control"/>
+                <div class="col s2">
+                    <label for="preco">Tamanho</label>
+                    <select name="preco" class="default-browser">
+                        <option value="" disabled>Escolha o tamanho</option>
+                        <option value="p">Pequeno</option>
+                        <option value="m">Médio</option>
+                        <option value="g">Grande</option>
+                    </select>
+                </div>
+
+                <div class="col s2">
+                    <label for="quantidade">Quantidade</label>
+                    <input type="number" min="1" step="1" name="quantidade" required class="form-control" />
+                </div>
+
+                <button type="submit" class="btn-floating pulse red"><i class="material-icons right">add</i></button>
             </div>
-
-            <div class="col s2">
-                <label for="quantidade">Quantidade</label>
-                <input type="number" min="1" step="1" name="quantidade" required class="form-control" />
-            </div>
-
-            <div class="col s4">
-                <label for="valor">Valor unitario</label>
-                <input type="text" name="valorUnitario" required class="form-control" />
-            </div>
-
-            <button type="submit" class="btn-floating pulse red"><i class="material-icons">add</i></button>
+            
         </form>
 
-        <a asp-action="PedidoFinal" class="btn-large "><i class="material-icons right">monetization_on</i>Finalizar pedido</a>
+        <a asp-action="PedidoFinal" class="btn-large"><i class="material-icons right">monetization_on</i>Finalizar pedido</a>
+
     </div>
+
+    

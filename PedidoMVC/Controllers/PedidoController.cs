@@ -9,14 +9,13 @@ using PedidoMVC.Models;
 namespace PedidoMVC.Controllers {
     public class PedidoController : Controller {
 
-        Pedido dados = Dados.PedidoAtual;
+        Pedido pedidoAtual = Dados.PedidoAtual;
         
         [HttpGet]
         public IActionResult Index() {
-            if(dados.Exibir().Count > 0) {
-                dados.Limpar();
+            if(pedidoAtual.Exibir().Count > 0) {
+                pedidoAtual.Limpar();
             }
-
             ViewBag.Header = "Faça seu pedido";
             return View();
         }
@@ -24,19 +23,30 @@ namespace PedidoMVC.Controllers {
         
         [HttpPost]
         public IActionResult Index(ItemPedido item) {
+            string nome = item.Nome;
+            int quantidade = item.Quantidade;
+    
+            string preco = item.Preco;
+            switch(preco){
+                case "p": preco = "10"; break;
+                case "m": preco = "20"; break;
+                case "g": preco = "30"; break;
 
-            dados.Adicionar(item);
-            var ordem = dados.Exibir();
+            }
+            
 
-            ViewBag.Header = "Seu pedido";
+            var itemPedido = new ItemPedido(nome, preco, quantidade);
+            pedidoAtual.Adicionar(itemPedido);
+            
+            var ordem = pedidoAtual.Exibir();
             return View(ordem);
         }
 
 
         public IActionResult PedidoFinal() {
-            
-            ViewBag.Total = dados.Total().ToString("C2");
-            var ordem = dados.Exibir();
+
+            ViewBag.Total = pedidoAtual.Total().ToString("C2");
+            var ordem = pedidoAtual.Exibir();
             return View(ordem);
         }
 

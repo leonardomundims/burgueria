@@ -5,7 +5,9 @@ using System.Text;
 namespace PedidoMVC.Models {
     public class ItemPedido {
 
-        public Produto Produto { get; set; }
+        public string Nome { get; set; }
+
+        public string Preco {get; set;}
 
         private int Quantity;
 
@@ -20,9 +22,18 @@ namespace PedidoMVC.Models {
         }
 
         public double SubTotal() {
-            double.TryParse(Produto.Preco, out double preco);
+            var info = Preco.Replace(".", ",");
+            double.TryParse(info, out double preco);
             return preco * Quantidade;
         }
+
+        public ItemPedido(string nome, string preco, int quantidade){
+            Nome = nome;
+            Preco = preco;
+            Quantidade = quantidade;
+        }
+
+        public ItemPedido(){}
 
     }
 }

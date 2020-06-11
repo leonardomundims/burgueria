@@ -6,8 +6,12 @@ namespace PedidoMVC.Models {
     public class Pedido {
         private List<ItemPedido> Ordem = new List<ItemPedido>();
 
-        public void Adicionar(ItemPedido item) {
+        public void Adicionar(ItemPedido item){
             Ordem.Add(item);
+        }
+
+        public List<ItemPedido> Exibir(){
+            return Ordem;
         }
 
         public void Limpar() {
@@ -16,9 +20,6 @@ namespace PedidoMVC.Models {
             }
         }
 
-        public List<ItemPedido> Exibir(){
-            return Ordem;
-        }
 
         public double Total() {
             double total = 0;
